@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModelAdmin.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'USER1.ADMIN' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="LOGIN" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="NOM" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LOGIN" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="NOM" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'USER1.HTMLDB_PLAN_TABLE' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
+        <EntityType Name="HTMLDB_PLAN_TABLE">
+          <Property Name="STATEMENT_ID" Type="varchar2" MaxLength="30" />
+          <Property Name="PLAN_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="TIMESTAMP" Type="date" />
+          <Property Name="REMARKS" Type="varchar2" MaxLength="4000" />
+          <Property Name="OPERATION" Type="varchar2" MaxLength="30" />
+          <Property Name="OPTIONS" Type="varchar2" MaxLength="255" />
+          <Property Name="OBJECT_NODE" Type="varchar2" MaxLength="128" />
+          <Property Name="OBJECT_OWNER" Type="varchar2" MaxLength="30" />
+          <Property Name="OBJECT_NAME" Type="varchar2" MaxLength="30" />
+          <Property Name="OBJECT_ALIAS" Type="varchar2" MaxLength="65" />
+          <Property Name="OBJECT_INSTANCE" Type="number" Precision="38" Scale="0" />
+          <Property Name="OBJECT_TYPE" Type="varchar2" MaxLength="30" />
+          <Property Name="OPTIMIZER" Type="varchar2" MaxLength="255" />
+          <Property Name="SEARCH_COLUMNS" Type="number" Precision="38" Scale="0" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PARENT_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="DEPTH" Type="number" Precision="38" Scale="0" />
+          <Property Name="POSITION" Type="number" Precision="38" Scale="0" />
+          <Property Name="COST" Type="number" Precision="38" Scale="0" />
+          <Property Name="CARDINALITY" Type="number" Precision="38" Scale="0" />
+          <Property Name="BYTES" Type="number" Precision="38" Scale="0" />
+          <Property Name="OTHER_TAG" Type="varchar2" MaxLength="255" />
+          <Property Name="PARTITION_START" Type="varchar2" MaxLength="255" />
+          <Property Name="PARTITION_STOP" Type="varchar2" MaxLength="255" />
+          <Property Name="PARTITION_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="OTHER" Type="long" />
+          <Property Name="DISTRIBUTION" Type="varchar2" MaxLength="30" />
+          <Property Name="CPU_COST" Type="number" Precision="38" Scale="0" />
+          <Property Name="IO_COST" Type="number" Precision="38" Scale="0" />
+          <Property Name="TEMP_SPACE" Type="number" Precision="38" Scale="0" />
+          <Property Name="ACCESS_PREDICATES" Type="varchar2" MaxLength="4000" />
+          <Property Name="FILTER_PREDICATES" Type="varchar2" MaxLength="4000" />
+          <Property Name="PROJECTION" Type="varchar2" MaxLength="4000" />
+          <Property Name="TIME" Type="number" Precision="38" Scale="0" />
+          <Property Name="QBLOCK_NAME" Type="varchar2" MaxLength="30" />
+        </EntityType>-->
+  <EntityType Name="LECTEUR">
+    <Key>
+      <PropertyRef Name="ID_LECTEUR" />
+    </Key>
+    <Property Name="ID_LECTEUR" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="N_PORTE" Type="number" Precision="38" Scale="0" />
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" />
+    <Property Name="SENS" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="MACHINE">
+    <Key>
+      <PropertyRef Name="ID_M" />
+    </Key>
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TYPE_M" Type="varchar2" MaxLength="4000" />
+    <Property Name="LIB" Type="varchar2" MaxLength="4000" />
+    <Property Name="IP" Type="varchar2" MaxLength="4000" />
+    <Property Name="PORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="PWD" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="ID_LECTEUR" Type="number" Precision="38" Scale="0" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="PASSE">
+    <Key>
+      <PropertyRef Name="MAT" />
+    </Key>
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="PERSONNEL">
+    <Key>
+      <PropertyRef Name="MAT" />
+    </Key>
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="NOM" Type="varchar2" MaxLength="4000" />
+    <Property Name="PRENOM" Type="varchar2" MaxLength="4000" />
+    <Property Name="TEL" Type="varchar2" MaxLength="4000" />
+    <Property Name="ADR_P" Type="varchar2" MaxLength="4000" />
+    <Property Name="VILLE_P" Type="varchar2" MaxLength="4000" />
+    <Property Name="POSTE" Type="varchar2" MaxLength="4000" />
+    <Property Name="DATE_EMB" Type="date" />
+    <Property Name="SALAIRE" Type="number" Precision="38" Scale="0" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" />
+    <Property Name="PHOTO" Type="blob" />
+    <Property Name="CODE" Type="number" Precision="38" Scale="0" />
+    <Property Name="IDEMPRIENT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="POINTAGE">
+    <Key>
+      <PropertyRef Name="idPointage" />
+    </Key>
+    <Property Name="idPointage" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DATE_P" Type="date" />
+    <Property Name="SENS" Type="varchar2" MaxLength="4000" />
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" />
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHIFT">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" />
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" />
+    <Property Name="DATEDDEBUT" Type="date" />
+    <Property Name="DATEDFIN" Type="date" />
+    <Property Name="HEUREDEBUT" Type="date" />
+    <Property Name="HEUREFIN" Type="date" />
+    <Property Name="HEUREDEBUTPAUSE" Type="date" />
+    <Property Name="HEUREFINPAUSE" Type="date" />
+    <Property Name="WEEKEND" Type="binary_double" />
+    <Property Name="VACANCE" Type="binary_double" />
+    <Property Name="JOURSFERIES" Type="binary_double" />
+    <Property Name="LIBELLE" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="SOCIETE">
+    <Key>
+      <PropertyRef Name="CODE_S" />
+    </Key>
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_S" Type="varchar2" MaxLength="4000" />
+    <Property Name="ADR_S" Type="varchar2" MaxLength="4000" />
+    <Property Name="VILLE" Type="varchar2" MaxLength="4000" />
+    <Property Name="CODE_POSTAL" Type="number" Precision="38" Scale="0" />
+    <Property Name="TEL_S" Type="varchar2" MaxLength="4000" />
+    <Property Name="PAY" Type="varchar2" MaxLength="4000" />
+    <Property Name="FILIALE" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <Association Name="LECTEUR_FK">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1" />
+    <End Role="LECTEUR" Type="Self.LECTEUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="LECTEUR">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MACHINE_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="MACHINE">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PASSE_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1" />
+    <End Role="PASSE" Type="Self.PASSE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="PASSE">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PASSE_FK2">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PASSE" Type="Self.PASSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="PASSE">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Personnel_FHIFT_FK">
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHIFT">
+        <PropertyRef Name="CODE" />
+      </Principal>
+      <Dependent Role="PERSONNEL">
+        <PropertyRef Name="CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONNEL_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="PERSONNEL">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONNEL_POINTAGE_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="POINTAGE">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="POINTAGE_FK2">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="POINTAGE">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SHIFT_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="SHIFT">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SHIFT_PERSO_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="SHIFT">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelAdminStoreContainer">
+    <EntitySet Name="LECTEUR" EntityType="Self.LECTEUR" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="MACHINE" EntityType="Self.MACHINE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="PASSE" EntityType="Self.PASSE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="PERSONNEL" EntityType="Self.PERSONNEL" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="POINTAGE" EntityType="Self.POINTAGE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="SHIFT" EntityType="Self.SHIFT" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="SOCIETE" EntityType="Self.SOCIETE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" store:Type="Tables" store:Schema="USER1">
+      <DefiningQuery>SELECT 
+"ADMIN"."ID" AS "ID", 
+"ADMIN"."LOGIN" AS "LOGIN", 
+"ADMIN"."PASSWORD" AS "PASSWORD", 
+"ADMIN"."NOM" AS "NOM"
+FROM "USER1"."ADMIN" "ADMIN"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="LECTEUR_FK" Association="Self.LECTEUR_FK">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="LECTEUR" EntitySet="LECTEUR" />
+    </AssociationSet>
+    <AssociationSet Name="MACHINE_FK" Association="Self.MACHINE_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="MACHINE" EntitySet="MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="PASSE_FK" Association="Self.PASSE_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="PASSE" EntitySet="PASSE" />
+    </AssociationSet>
+    <AssociationSet Name="PASSE_FK2" Association="Self.PASSE_FK2">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="PASSE" EntitySet="PASSE" />
+    </AssociationSet>
+    <AssociationSet Name="Personnel_FHIFT_FK" Association="Self.Personnel_FHIFT_FK">
+      <End Role="SHIFT" EntitySet="SHIFT" />
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONNEL_FK" Association="Self.PERSONNEL_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONNEL_POINTAGE_FK" Association="Self.PERSONNEL_POINTAGE_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+    </AssociationSet>
+    <AssociationSet Name="POINTAGE_FK2" Association="Self.POINTAGE_FK2">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_FK" Association="Self.SHIFT_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="SHIFT" EntitySet="SHIFT" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_PERSO_FK" Association="Self.SHIFT_PERSO_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="SHIFT" EntitySet="SHIFT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

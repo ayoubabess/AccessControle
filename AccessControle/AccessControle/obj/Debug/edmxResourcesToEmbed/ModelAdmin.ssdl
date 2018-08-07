@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModelAdmin.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'USER1.ADMIN' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOGIN" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="NOM" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LOGIN" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="NOM" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ModelAdminStoreContainer">
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" store:Type="Tables" store:Schema="USER1">
+      <DefiningQuery>SELECT 
+"ADMIN"."ID" AS "ID", 
+"ADMIN"."LOGIN" AS "LOGIN", 
+"ADMIN"."PASSWORD" AS "PASSWORD", 
+"ADMIN"."NOM" AS "NOM"
+FROM "USER1"."ADMIN" "ADMIN"</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LECTEUR">
+    <Key>
+      <PropertyRef Name="ID_LECTEUR" />
+    </Key>
+    <Property Name="ID_LECTEUR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="N_PORTE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_M" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SENS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MACHINE" Relationship="Self.LECTEUR_FK" FromRole="LECTEUR" ToRole="MACHINE" />
+  </EntityType>
+  <EntityType Name="MACHINE">
+    <Key>
+      <PropertyRef Name="ID_M" />
+    </Key>
+    <Property Name="ID_M" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TYPE_M" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="LIB" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="IP" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="PORT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PWD" Type="String" />
+    <Property Name="ID_LECTEUR" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CODE_S" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="LECTEUR" Relationship="Self.LECTEUR_FK" FromRole="MACHINE" ToRole="LECTEUR" />
+    <NavigationProperty Name="SOCIETE" Relationship="Self.MACHINE_FK" FromRole="MACHINE" ToRole="SOCIETE" />
+    <NavigationProperty Name="POINTAGE" Relationship="Self.POINTAGE_FK2" FromRole="MACHINE" ToRole="POINTAGE" />
+    <NavigationProperty Name="PERSONNEL" Relationship="Self.PASSE" FromRole="MACHINE" ToRole="PERSONNEL" />
+  </EntityType>
+  <EntityType Name="PERSO_CARTE">
+    <Key>
+      <PropertyRef Name="MAT" />
+      <PropertyRef Name="CARTE" />
+    </Key>
+    <Property Name="MAT" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CARTE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODE_S" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="PERSONNEL" Relationship="Self.PERSO_CARTE_FK" FromRole="PERSO_CARTE" ToRole="PERSONNEL" />
+    <NavigationProperty Name="POINTAGE" Relationship="Self.PERSO_CARTE_FK2" FromRole="PERSO_CARTE" ToRole="POINTAGE" />
+    <NavigationProperty Name="SOCIETE" Relationship="Self.PERSO_CARTE_FK3" FromRole="PERSO_CARTE" ToRole="SOCIETE" />
+  </EntityType>
+  <EntityType Name="PERSONNEL">
+    <Key>
+      <PropertyRef Name="MAT" />
+    </Key>
+    <Property Name="MAT" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOM" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="PRENOM" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="TEL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ADR_P" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="VILLE_P" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="POSTE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_EMB" Type="DateTime" />
+    <Property Name="SALAIRE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CODE_S" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="PERSO_CARTE" Relationship="Self.PERSO_CARTE_FK" FromRole="PERSONNEL" ToRole="PERSO_CARTE" />
+    <NavigationProperty Name="SOCIETE" Relationship="Self.PERSONNEL_FK" FromRole="PERSONNEL" ToRole="SOCIETE" />
+    <NavigationProperty Name="MACHINE" Relationship="Self.PASSE" FromRole="PERSONNEL" ToRole="MACHINE" />
+    <NavigationProperty Name="SHIFT" Relationship="Self.SHIFT_PERSO" FromRole="PERSONNEL" ToRole="SHIFT" />
+    <NavigationProperty Name="SOCIETE1" Relationship="Self.SOCIETE_PERSONNEL" FromRole="PERSONNEL" ToRole="SOCIETE" />
+    <Property Name="IDEMPRIENT" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="POINTAGE">
+    <Key>
+      <PropertyRef Name="CARTE" />
+    </Key>
+    <Property Name="CARTE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SOC" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_P" Type="DateTime" />
+    <Property Name="HEUR" Type="DateTime" Precision="6" />
+    <Property Name="SENS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_S" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_M" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="MACHINE" Relationship="Self.POINTAGE_FK2" FromRole="POINTAGE" ToRole="MACHINE" />
+    <NavigationProperty Name="PERSO_CARTE" Relationship="Self.PERSO_CARTE_FK2" FromRole="POINTAGE" ToRole="PERSO_CARTE" />
+    <NavigationProperty Name="SOCIETE" Relationship="Self.POINTAGE_FK" FromRole="POINTAGE" ToRole="SOCIETE" />
+  </EntityType>
+  <EntityType Name="SHIFT">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODE_S" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <NavigationProperty Name="SOCIETE" Relationship="Self.SHIFT_FK" FromRole="SHIFT" ToRole="SOCIETE" />
+    <NavigationProperty Name="PERSONNEL" Relationship="Self.SHIFT_PERSO" FromRole="SHIFT" ToRole="PERSONNEL" />
+    <Property Name="VACANCE" Type="Double" />
+    <Property Name="JOURSFERIES" Type="Double" />
+    <Property Name="WEEKEND" Type="Double" />
+    <Property Name="DATEDDEBUT" Type="DateTime" />
+    <Property Name="DATEDFIN" Type="DateTime" />
+    <Property Name="HEUREDEBUT" Type="DateTime" />
+    <Property Name="HEUREFIN" Type="DateTime" />
+    <Property Name="HEUREDEBUTPAUSE" Type="DateTime" />
+    <Property Name="HEUREFINPAUSE" Type="DateTime" />
+    <Property Name="LIBELLE" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SOCIETE">
+    <Key>
+      <PropertyRef Name="CODE_S" />
+    </Key>
+    <Property Name="CODE_S" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_S" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ADR_S" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="VILLE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_POSTAL" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TEL_S" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="PAY" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="FILIALE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MACHINE" Relationship="Self.MACHINE_FK" FromRole="SOCIETE" ToRole="MACHINE" />
+    <NavigationProperty Name="PERSO_CARTE" Relationship="Self.PERSO_CARTE_FK3" FromRole="SOCIETE" ToRole="PERSO_CARTE" />
+    <NavigationProperty Name="PERSONNEL" Relationship="Self.PERSONNEL_FK" FromRole="SOCIETE" ToRole="PERSONNEL" />
+    <NavigationProperty Name="POINTAGE" Relationship="Self.POINTAGE_FK" FromRole="SOCIETE" ToRole="POINTAGE" />
+    <NavigationProperty Name="SHIFT" Relationship="Self.SHIFT_FK" FromRole="SOCIETE" ToRole="SHIFT" />
+    <NavigationProperty Name="PERSONNEL1" Relationship="Self.SOCIETE_PERSONNEL" FromRole="SOCIETE" ToRole="PERSONNEL" />
+  </EntityType>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOGIN" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="NOM" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LOGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="LECTEUR_FK">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1" />
+    <End Role="LECTEUR" Type="Self.LECTEUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="LECTEUR">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MACHINE_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="MACHINE">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="POINTAGE_FK2">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1" />
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="POINTAGE">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSO_CARTE_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1" />
+    <End Role="PERSO_CARTE" Type="Self.PERSO_CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="PERSO_CARTE">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSO_CARTE_FK2">
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="1" />
+    <End Role="PERSO_CARTE" Type="Self.PERSO_CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POINTAGE">
+        <PropertyRef Name="CARTE" />
+      </Principal>
+      <Dependent Role="PERSO_CARTE">
+        <PropertyRef Name="CARTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSO_CARTE_FK3">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="PERSO_CARTE" Type="Self.PERSO_CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="PERSO_CARTE">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONNEL_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="PERSONNEL">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="POINTAGE_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="POINTAGE">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SHIFT_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="1" />
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="SHIFT">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PASSE">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="*" />
+  </Association>
+  <Association Name="SHIFT_PERSO">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="*" />
+  </Association>
+  <Association Name="SOCIETE_PERSONNEL">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="*" />
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LECTEUR" EntityType="Self.LECTEUR" />
+    <EntitySet Name="MACHINE" EntityType="Self.MACHINE" />
+    <EntitySet Name="PERSO_CARTE" EntityType="Self.PERSO_CARTE" />
+    <EntitySet Name="PERSONNEL" EntityType="Self.PERSONNEL" />
+    <EntitySet Name="POINTAGE" EntityType="Self.POINTAGE" />
+    <EntitySet Name="SHIFT" EntityType="Self.SHIFT" />
+    <EntitySet Name="SOCIETE" EntityType="Self.SOCIETE" />
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" />
+    <AssociationSet Name="LECTEUR_FK" Association="Self.LECTEUR_FK">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="LECTEUR" EntitySet="LECTEUR" />
+    </AssociationSet>
+    <AssociationSet Name="MACHINE_FK" Association="Self.MACHINE_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="MACHINE" EntitySet="MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="POINTAGE_FK2" Association="Self.POINTAGE_FK2">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSO_CARTE_FK" Association="Self.PERSO_CARTE_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="PERSO_CARTE" EntitySet="PERSO_CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSO_CARTE_FK2" Association="Self.PERSO_CARTE_FK2">
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+      <End Role="PERSO_CARTE" EntitySet="PERSO_CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSO_CARTE_FK3" Association="Self.PERSO_CARTE_FK3">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="PERSO_CARTE" EntitySet="PERSO_CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONNEL_FK" Association="Self.PERSONNEL_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+    </AssociationSet>
+    <AssociationSet Name="POINTAGE_FK" Association="Self.POINTAGE_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_FK" Association="Self.SHIFT_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="SHIFT" EntitySet="SHIFT" />
+    </AssociationSet>
+    <AssociationSet Name="PASSE" Association="Self.PASSE">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="MACHINE" EntitySet="MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_PERSO" Association="Self.SHIFT_PERSO">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="SHIFT" EntitySet="SHIFT" />
+    </AssociationSet>
+    <AssociationSet Name="SOCIETE_PERSONNEL" Association="Self.SOCIETE_PERSONNEL">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

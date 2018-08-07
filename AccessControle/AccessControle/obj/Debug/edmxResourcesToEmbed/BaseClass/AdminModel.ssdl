@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'USER1.ADMIN' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOGIN" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="NOM" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LOGIN" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="NOM" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LECTEUR">
+    <Key>
+      <PropertyRef Name="ID_LECTEUR" />
+    </Key>
+    <Property Name="ID_LECTEUR" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="N_PORTE" Type="number" Precision="38" Scale="0" />
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" />
+    <Property Name="SENS" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="MACHINE">
+    <Key>
+      <PropertyRef Name="ID_M" />
+    </Key>
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TYPE_M" Type="varchar2" MaxLength="4000" />
+    <Property Name="LIB" Type="varchar2" MaxLength="4000" />
+    <Property Name="IP" Type="varchar2" MaxLength="4000" />
+    <Property Name="PORT" Type="number" Precision="38" Scale="0" />
+    <Property Name="PWD" Type="varchar2" MaxLength="50" />
+    <Property Name="ID_LECTEUR" Type="number" Precision="38" Scale="0" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="PASSE">
+    <Key>
+      <PropertyRef Name="MAT" />
+      <PropertyRef Name="ID_M" />
+    </Key>
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERSO_CARTE">
+    <Key>
+      <PropertyRef Name="MAT" />
+      <PropertyRef Name="CARTE" />
+    </Key>
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="CARTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="PERSONNEL">
+    <Key>
+      <PropertyRef Name="MAT" />
+    </Key>
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="NOM" Type="varchar2" MaxLength="4000" />
+    <Property Name="PRENOM" Type="varchar2" MaxLength="4000" />
+    <Property Name="TEL" Type="varchar2" MaxLength="4000" />
+    <Property Name="ADR_P" Type="varchar2" MaxLength="4000" />
+    <Property Name="VILLE_P" Type="varchar2" MaxLength="4000" />
+    <Property Name="POSTE" Type="varchar2" MaxLength="4000" />
+    <Property Name="DATE_EMB" Type="date" />
+    <Property Name="SALAIRE" Type="number" Precision="38" Scale="0" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" />
+    <Property Name="PHOTO" Type="blob" />
+    <Property Name="IDEMPRIENT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="POINTAGE">
+    <Key>
+      <PropertyRef Name="CARTE" />
+    </Key>
+    <Property Name="CARTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DATE_P" Type="date" />
+    <Property Name="SENS" Type="varchar2" MaxLength="4000" />
+    <Property Name="ID_M" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SHIFT">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="VACANCE" Type="binary_double" />
+    <Property Name="JOURSFERIES" Type="binary_double" />
+    <Property Name="WEEKEND" Type="binary_double" />
+    <Property Name="DATEDDEBUT" Type="date" />
+    <Property Name="DATEDFIN" Type="date" />
+    <Property Name="HEUREDEBUT" Type="date" />
+    <Property Name="HEUREFIN" Type="date" />
+    <Property Name="HEUREDEBUTPAUSE" Type="date" />
+    <Property Name="HEUREFINPAUSE" Type="date" />
+    <Property Name="LIBELLE" Type="varchar2" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="SHIFT_PERSO">
+    <Key>
+      <PropertyRef Name="MAT" />
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+    <Property Name="CODE" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOCIETE">
+    <Key>
+      <PropertyRef Name="CODE_S" />
+    </Key>
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_S" Type="varchar2" MaxLength="4000" />
+    <Property Name="ADR_S" Type="varchar2" MaxLength="4000" />
+    <Property Name="VILLE" Type="varchar2" MaxLength="4000" />
+    <Property Name="CODE_POSTAL" Type="number" Precision="38" Scale="0" />
+    <Property Name="TEL_S" Type="varchar2" MaxLength="4000" />
+    <Property Name="PAY" Type="varchar2" MaxLength="4000" />
+    <Property Name="FILIALE" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="SOCIETE_PERSONNEL">
+    <Key>
+      <PropertyRef Name="CODE_S" />
+      <PropertyRef Name="MAT" />
+    </Key>
+    <Property Name="CODE_S" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MAT" Type="varchar2" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <Association Name="LECTEUR_FK">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1" />
+    <End Role="LECTEUR" Type="Self.LECTEUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="LECTEUR">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PASSE_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1" />
+    <End Role="PASSE" Type="Self.PASSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="PASSE">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PASSE_FK2">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="1" />
+    <End Role="PASSE" Type="Self.PASSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="PASSE">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSO_CARTE_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1" />
+    <End Role="PERSO_CARTE" Type="Self.PERSO_CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="PERSO_CARTE">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSO_CARTE_FK2">
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="1" />
+    <End Role="PERSO_CARTE" Type="Self.PERSO_CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POINTAGE">
+        <PropertyRef Name="CARTE" />
+      </Principal>
+      <Dependent Role="PERSO_CARTE">
+        <PropertyRef Name="CARTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSO_CARTE_FK3">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="PERSO_CARTE" Type="Self.PERSO_CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="PERSO_CARTE">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSONNEL_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="0..1" />
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="PERSONNEL">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="POINTAGE_FK2">
+    <End Role="MACHINE" Type="Self.MACHINE" Multiplicity="0..1" />
+    <End Role="POINTAGE" Type="Self.POINTAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MACHINE">
+        <PropertyRef Name="ID_M" />
+      </Principal>
+      <Dependent Role="POINTAGE">
+        <PropertyRef Name="ID_M" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SHIFT_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="1" />
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="SHIFT">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SHIFT_PERSO_FK">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1" />
+    <End Role="SHIFT_PERSO" Type="Self.SHIFT_PERSO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="SHIFT_PERSO">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SHIFT_PERSO_FK2">
+    <End Role="SHIFT" Type="Self.SHIFT" Multiplicity="1" />
+    <End Role="SHIFT_PERSO" Type="Self.SHIFT_PERSO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHIFT">
+        <PropertyRef Name="CODE" />
+      </Principal>
+      <Dependent Role="SHIFT_PERSO">
+        <PropertyRef Name="CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SOCIETE_PERSONNEL_FK">
+    <End Role="SOCIETE" Type="Self.SOCIETE" Multiplicity="1" />
+    <End Role="SOCIETE_PERSONNEL" Type="Self.SOCIETE_PERSONNEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIETE">
+        <PropertyRef Name="CODE_S" />
+      </Principal>
+      <Dependent Role="SOCIETE_PERSONNEL">
+        <PropertyRef Name="CODE_S" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SOCIETE_PERSONNEL_FK2">
+    <End Role="PERSONNEL" Type="Self.PERSONNEL" Multiplicity="1" />
+    <End Role="SOCIETE_PERSONNEL" Type="Self.SOCIETE_PERSONNEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Principal>
+      <Dependent Role="SOCIETE_PERSONNEL">
+        <PropertyRef Name="MAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="LECTEUR" EntityType="Self.LECTEUR" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="MACHINE" EntityType="Self.MACHINE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="PASSE" EntityType="Self.PASSE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="PERSO_CARTE" EntityType="Self.PERSO_CARTE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="PERSONNEL" EntityType="Self.PERSONNEL" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="POINTAGE" EntityType="Self.POINTAGE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="SHIFT" EntityType="Self.SHIFT" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="SHIFT_PERSO" EntityType="Self.SHIFT_PERSO" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="SOCIETE" EntityType="Self.SOCIETE" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="SOCIETE_PERSONNEL" EntityType="Self.SOCIETE_PERSONNEL" Schema="USER1" store:Type="Tables" />
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" store:Type="Tables" store:Schema="USER1">
+      <DefiningQuery>SELECT 
+"ADMIN"."ID" AS "ID", 
+"ADMIN"."LOGIN" AS "LOGIN", 
+"ADMIN"."PASSWORD" AS "PASSWORD", 
+"ADMIN"."NOM" AS "NOM"
+FROM "USER1"."ADMIN" "ADMIN"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="LECTEUR_FK" Association="Self.LECTEUR_FK">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="LECTEUR" EntitySet="LECTEUR" />
+    </AssociationSet>
+    <AssociationSet Name="PASSE_FK" Association="Self.PASSE_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="PASSE" EntitySet="PASSE" />
+    </AssociationSet>
+    <AssociationSet Name="PASSE_FK2" Association="Self.PASSE_FK2">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="PASSE" EntitySet="PASSE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSO_CARTE_FK" Association="Self.PERSO_CARTE_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="PERSO_CARTE" EntitySet="PERSO_CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSO_CARTE_FK2" Association="Self.PERSO_CARTE_FK2">
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+      <End Role="PERSO_CARTE" EntitySet="PERSO_CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSO_CARTE_FK3" Association="Self.PERSO_CARTE_FK3">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="PERSO_CARTE" EntitySet="PERSO_CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="PERSONNEL_FK" Association="Self.PERSONNEL_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+    </AssociationSet>
+    <AssociationSet Name="POINTAGE_FK2" Association="Self.POINTAGE_FK2">
+      <End Role="MACHINE" EntitySet="MACHINE" />
+      <End Role="POINTAGE" EntitySet="POINTAGE" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_FK" Association="Self.SHIFT_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="SHIFT" EntitySet="SHIFT" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_PERSO_FK" Association="Self.SHIFT_PERSO_FK">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="SHIFT_PERSO" EntitySet="SHIFT_PERSO" />
+    </AssociationSet>
+    <AssociationSet Name="SHIFT_PERSO_FK2" Association="Self.SHIFT_PERSO_FK2">
+      <End Role="SHIFT" EntitySet="SHIFT" />
+      <End Role="SHIFT_PERSO" EntitySet="SHIFT_PERSO" />
+    </AssociationSet>
+    <AssociationSet Name="SOCIETE_PERSONNEL_FK" Association="Self.SOCIETE_PERSONNEL_FK">
+      <End Role="SOCIETE" EntitySet="SOCIETE" />
+      <End Role="SOCIETE_PERSONNEL" EntitySet="SOCIETE_PERSONNEL" />
+    </AssociationSet>
+    <AssociationSet Name="SOCIETE_PERSONNEL_FK2" Association="Self.SOCIETE_PERSONNEL_FK2">
+      <End Role="PERSONNEL" EntitySet="PERSONNEL" />
+      <End Role="SOCIETE_PERSONNEL" EntitySet="SOCIETE_PERSONNEL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

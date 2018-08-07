@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelAdminStoreContainer" CdmEntityContainer="DbEntities">
+    <EntitySetMapping Name="LECTEUR">
+      <EntityTypeMapping TypeName="ModelAdmin.LECTEUR">
+        <MappingFragment StoreEntitySet="LECTEUR">
+          <ScalarProperty Name="ID_LECTEUR" ColumnName="ID_LECTEUR" />
+          <ScalarProperty Name="N_PORTE" ColumnName="N_PORTE" />
+          <ScalarProperty Name="ID_M" ColumnName="ID_M" />
+          <ScalarProperty Name="SENS" ColumnName="SENS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MACHINE">
+      <EntityTypeMapping TypeName="ModelAdmin.MACHINE">
+        <MappingFragment StoreEntitySet="MACHINE">
+          <ScalarProperty Name="ID_M" ColumnName="ID_M" />
+          <ScalarProperty Name="TYPE_M" ColumnName="TYPE_M" />
+          <ScalarProperty Name="LIB" ColumnName="LIB" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="PORT" ColumnName="PORT" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="ID_LECTEUR" ColumnName="ID_LECTEUR" />
+          <ScalarProperty Name="CODE_S" ColumnName="CODE_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PASSE">
+      <EntityTypeMapping TypeName="ModelAdmin.PASSE">
+        <MappingFragment StoreEntitySet="PASSE">
+          <ScalarProperty Name="MAT" ColumnName="MAT" />
+          <ScalarProperty Name="ID_M" ColumnName="ID_M" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSONNEL">
+      <EntityTypeMapping TypeName="ModelAdmin.PERSONNEL">
+        <MappingFragment StoreEntitySet="PERSONNEL">
+          <ScalarProperty Name="MAT" ColumnName="MAT" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="PRENOM" ColumnName="PRENOM" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="ADR_P" ColumnName="ADR_P" />
+          <ScalarProperty Name="VILLE_P" ColumnName="VILLE_P" />
+          <ScalarProperty Name="POSTE" ColumnName="POSTE" />
+          <ScalarProperty Name="DATE_EMB" ColumnName="DATE_EMB" />
+          <ScalarProperty Name="SALAIRE" ColumnName="SALAIRE" />
+          <ScalarProperty Name="CODE_S" ColumnName="CODE_S" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="IDEMPRIENT" ColumnName="IDEMPRIENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POINTAGE">
+      <EntityTypeMapping TypeName="ModelAdmin.POINTAGE">
+        <MappingFragment StoreEntitySet="POINTAGE">
+          <ScalarProperty Name="idPointage" ColumnName="idPointage" />
+          <ScalarProperty Name="DATE_P" ColumnName="DATE_P" />
+          <ScalarProperty Name="SENS" ColumnName="SENS" />
+          <ScalarProperty Name="ID_M" ColumnName="ID_M" />
+          <ScalarProperty Name="MAT" ColumnName="MAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHIFT">
+      <EntityTypeMapping TypeName="ModelAdmin.SHIFT">
+        <MappingFragment StoreEntitySet="SHIFT">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="CODE_S" ColumnName="CODE_S" />
+          <ScalarProperty Name="MAT" ColumnName="MAT" />
+          <ScalarProperty Name="DATEDDEBUT" ColumnName="DATEDDEBUT" />
+          <ScalarProperty Name="DATEDFIN" ColumnName="DATEDFIN" />
+          <ScalarProperty Name="HEUREDEBUT" ColumnName="HEUREDEBUT" />
+          <ScalarProperty Name="HEUREFIN" ColumnName="HEUREFIN" />
+          <ScalarProperty Name="HEUREDEBUTPAUSE" ColumnName="HEUREDEBUTPAUSE" />
+          <ScalarProperty Name="HEUREFINPAUSE" ColumnName="HEUREFINPAUSE" />
+          <ScalarProperty Name="WEEKEND" ColumnName="WEEKEND" />
+          <ScalarProperty Name="VACANCE" ColumnName="VACANCE" />
+          <ScalarProperty Name="JOURSFERIES" ColumnName="JOURSFERIES" />
+          <ScalarProperty Name="LIBELLE" ColumnName="LIBELLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIETE">
+      <EntityTypeMapping TypeName="ModelAdmin.SOCIETE">
+        <MappingFragment StoreEntitySet="SOCIETE">
+          <ScalarProperty Name="CODE_S" ColumnName="CODE_S" />
+          <ScalarProperty Name="NOM_S" ColumnName="NOM_S" />
+          <ScalarProperty Name="ADR_S" ColumnName="ADR_S" />
+          <ScalarProperty Name="VILLE" ColumnName="VILLE" />
+          <ScalarProperty Name="CODE_POSTAL" ColumnName="CODE_POSTAL" />
+          <ScalarProperty Name="TEL_S" ColumnName="TEL_S" />
+          <ScalarProperty Name="PAY" ColumnName="PAY" />
+          <ScalarProperty Name="FILIALE" ColumnName="FILIALE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMIN">
+      <EntityTypeMapping TypeName="ModelAdmin.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

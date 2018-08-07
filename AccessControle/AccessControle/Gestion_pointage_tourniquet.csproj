@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1E8B530-FE40-4CB9-A76E-631F9A7FA20E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gestion_pointage_tourniquet</RootNamespace>
+    <AssemblyName>Gestion_pointage_tourniquet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajout de l%27employé.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ajout de l%27employé.Designer.cs">
+      <DependentUpon>ajout de l%27employé.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutShift.Designer.cs">
+      <DependentUpon>AjoutShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutEmpriente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutEmpriente.Designer.cs">
+      <DependentUpon>AjoutEmpriente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClass\ADMIN.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\LECTEUR.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\MACHINE.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\ModelAdmin.Context.cs">
+      <DependentUpon>ModelAdmin.Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="BaseClass\ModelAdmin.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="BaseClass\ModelAdmin.Designer.cs">
+      <DependentUpon>ModelAdmin.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="BaseClass\PASSE.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\PERSONNEL.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\POINTAGE.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\SHIFT.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClass\SOCIETE.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NotificationPointageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationPointageForm.Designer.cs">
+      <DependentUpon>NotificationPointageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortFormt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortFormt.Designer.cs">
+      <DependentUpon>PortFormt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierFiliale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierFiliale.Designer.cs">
+      <DependentUpon>ModifierFiliale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageFormtYesOrNO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageFormtYesOrNO.Designer.cs">
+      <DependentUpon>MessageFormtYesOrNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageFormError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageFormError.Designer.cs">
+      <DependentUpon>MessageFormError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageFormtOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageFormtOK.Designer.cs">
+      <DependentUpon>MessageFormtOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PointageControl.Designer.cs">
+      <DependentUpon>PointageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierShift.Designer.cs">
+      <DependentUpon>ModifierShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifierMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifierMachine.Designer.cs">
+      <DependentUpon>modifierMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ajoutMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ajoutMachine.Designer.cs">
+      <DependentUpon>ajoutMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="authentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="authentification.Designer.cs">
+      <DependentUpon>authentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControl.Designer.cs">
+      <DependentUpon>MachineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutFiliale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutFiliale.Designer.cs">
+      <DependentUpon>AjoutFiliale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Port.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="filialeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="filialeControl.Designer.cs">
+      <DependentUpon>filialeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShifControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShifControl.Designer.cs">
+      <DependentUpon>ShifControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ajout de l%27employé.resx">
+      <DependentUpon>ajout de l%27employé.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutShift.resx">
+      <DependentUpon>AjoutShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutEmpriente.resx">
+      <DependentUpon>AjoutEmpriente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutFiliale.resx">
+      <DependentUpon>AjoutFiliale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationPointageForm.resx">
+      <DependentUpon>NotificationPointageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortFormt.resx">
+      <DependentUpon>PortFormt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierFiliale.resx">
+      <DependentUpon>ModifierFiliale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageFormtYesOrNO.resx">
+      <DependentUpon>MessageFormtYesOrNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageFormError.resx">
+      <DependentUpon>MessageFormError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageFormtOK.resx">
+      <DependentUpon>MessageFormtOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointageControl.resx">
+      <DependentUpon>PointageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierShift.resx">
+      <DependentUpon>ModifierShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifierMachine.resx">
+      <DependentUpon>modifierMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ajoutMachine.resx">
+      <DependentUpon>ajoutMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="authentification.resx">
+      <DependentUpon>authentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControl.resx">
+      <DependentUpon>MachineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="filialeControl.resx">
+      <DependentUpon>filialeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShifControl.resx">
+      <DependentUpon>ShifControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BaseClass\ModelAdmin.edmx.diagram">
+      <DependentUpon>ModelAdmin.edmx</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BaseClass\ModelAdmin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelAdmin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseClass\ModelAdmin.Context.tt">
+      <DependentUpon>ModelAdmin.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelAdmin.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BaseClass\ModelAdmin.tt">
+      <DependentUpon>ModelAdmin.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelAdmin.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\Ajax-loader.gif" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,68 @@
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Gestion_pointage_tourniquet.exe.config
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Gestion_pointage_tourniquet.exe
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Gestion_pointage_tourniquet.pdb
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Oracle.DataAccess.dll
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Oracle.ManagedDataAccess.dll
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.csprojResolveAssemblyReference.cache
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Form1.resources
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Properties.Resources.resources
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.csproj.GenerateResource.Cache
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.exe
+c:\users\mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.pdb
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.dll
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.xml
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Form2.resources
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.authentification.resources
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Form3.resources
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.UserControl1.resources
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.MachineControl.resources
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.ajoutMachine.resources
+C:\Users\Mounir\documents\visual studio 2015\Projects\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.AjoutFiliale.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.ajoutEmployeForm.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.AjoutShift.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.AjoutEmpriente.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.AjoutFiliale.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.modifierMachine.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.ajoutMachine.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.authentification.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.MachineControl.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Form1.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Form3.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.Properties.Resources.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.filialesControl.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.ShiftControl.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.UserControl1.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.csproj.GenerateResource.Cache
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Gestion_pointage_tourniquet.exe.config
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Gestion_pointage_tourniquet.exe
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Gestion_pointage_tourniquet.pdb
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\MetroFramework.Design.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\MetroFramework.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.xml
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.exe
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.pdb
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.PointageControl.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.ModifierShift.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.MessageFormtOK.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.MessageFormtYesOrNO.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.MessageFormError.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.ModifierFiliale.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.PortFormt.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.NotificationPointageForm.resources
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.csprojAssemblyReference.cache
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.csproj.CoreCompileInputs.cache
+C:\Users\Ayoub\Desktop\Gestion_pointage_tourniquet\Gestion_pointage_tourniquet\obj\Debug\Gestion_pointage_tourniquet.csproj.CopyComplete
